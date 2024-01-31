@@ -24,6 +24,16 @@ class TestDiscount(TestCase):
         expected_discount = 4
         self.assertEqual(expected_discount, discount(prices))
 
+    def test_list_of_string_prices(self):
+        prices = ["ten", "10", "4", "44", "four"]
+        expected_discount = 4
+        self.assertEqual(expected_discount, discount(prices))
+
+    def test_list_of_float_prices(self):
+        prices = [4.00, 4.4, 4.44444444, 90.13, 234.234]
+        expected_discount = 4
+        self.assertEqual(expected_discount, discount(prices))
+
 
 if __name__ == '__main__':
     unittest.main()
